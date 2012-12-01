@@ -1,7 +1,7 @@
 ProjectX: it's simply the theme
 ===============================
 
-**IMPORTANT**: *Thanks to this GitHub Repo you can track bugfixes and keep your ProjectX copy up to date, but keep in mind that this is a **development version**. Therefore, CSSs and JSs **are not** packed, although you can pack them on your own: I'll update this dev version with bugfixes and icon additions every time you will request any. Also, this ProjectX version **doesn't include the installation wizard** but it contains just the necessary files to make it work properly. If you haven't installed it on your board yet, please download it from the [Mods Site][1] and install it through the installation wizard first.*
+**IMPORTANT**: *Thanks to this GitHub Repo you can track bugfixes and keep your ProjectX copy up to date, but keep in mind that this is a <strong>development version</strong>. Therefore, CSSs and JSs <strong>are not</strong> packed, although you can pack them on your own: I'll update this dev version with bugfixes and icon additions every time you will request any. Also, this ProjectX version <strong>doesn't include the installation wizard</strong> but it contains just the necessary files to make it work properly. If you haven't installed it on your board yet, please download it from the [Mods Site][1] and install it through the installation wizard first.*
 
 [1]: http://mods.mybb.com/
 
