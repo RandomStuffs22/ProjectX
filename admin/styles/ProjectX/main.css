@@ -252,8 +252,7 @@ table.general
 
 table.general td
 {
-	border-bottom: 1px solid #D2D3D4;
-	position: relative
+	border-bottom: 1px solid #D2D3D4
 }
 
 table.general tr:last-child td:first-child,form[action*="edit_stylesheet"] table.general tr:last-child td:only-child,table.general thead+tbody tr:last-child td:first-child
