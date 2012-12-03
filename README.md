@@ -5,7 +5,7 @@ ProjectX: it's simply the theme
 
 [1]: http://mods.mybb.com/
 
-> **Current version** beta 0.1-3  
+> **Current version** beta 0.1-4  
 > **Dependencies** jQuery (included in /jscripts folder)  
 > **Author** Shade  
 > **Special thanks goes to...** Lowseling who created and currently maintains the installation wizard, WebOutfit who reported me a lot of bugs and helped me fixing some of them. They both have access to upcoming releases before anyone else.
@@ -28,6 +28,7 @@ At the moment ProjectX is equipped with:
 
 * A lightweight and clean installation wizard which will guide you through ProjectX installation **Not included in GitHub version**
 * Stunning and comprehensible graphics
+* A new, stunning concept of popups, Mac inspired and with amazing styles and animations
 * Clean and intuitive User Interface
 * Iconic menu with jQuery-powered tooltip fired on hover, with any language and mobile support
 * CSS gorgeous radio buttons with rewritten HTML syntax designed for an intuitive and fast usage
