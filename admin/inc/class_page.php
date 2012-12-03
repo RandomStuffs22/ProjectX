@@ -95,7 +95,7 @@ class DefaultPage
 		echo "	<script type=\"text/javascript\" src=\"../jscripts/prototype.js\"></script>\n";
 		echo "	<script type=\"text/javascript\" src=\"../jscripts/general.js\"></script>\n";
 		echo "	<script type=\"text/javascript\" src=\"../jscripts/effects.js\"></script>\n";
-		echo "	<script type=\"text/javascript\" src=\"../jscripts/popup_menu.js\"></script>\n";
+		echo "	<script type=\"text/javascript\" src=\"./jscripts/popup_menu.js\"></script>\n";
 		echo "	<script type=\"text/javascript\" src=\"./jscripts/admincp.js\"></script>\n";
 		echo "	<script type=\"text/javascript\" src=\"./jscripts/tabs.js\"></script>\n";
 		echo "	<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js\"></script>\n";
@@ -880,7 +880,7 @@ class DefaultPopupMenu
 		{
 			$onclick = " onclick=\"{$onclick}\"";
 		}
-		$this->_items .= "<div class=\"popup_item_container\"><a href=\"{$link}\"{$onclick} class=\"popup_item\">{$text}</a></div>\n";
+		$this->_items .= "<div class=\"popup_item_container\"><a title=\"{$text}\" href=\"{$link}\"{$onclick} class=\"popup_item\"></a></div>";
 	}
 
 	/**
@@ -890,14 +890,14 @@ class DefaultPopupMenu
 	 */
 	function fetch()
 	{
-		$popup = "<div class=\"popup_menu\" id=\"{$this->_id}_popup\">\n{$this->_items}</div>\n";
+		$popup = "<div class=\"pjxPopup-wrap\"><div class=\"popup_menu\" id=\"{$this->_id}_popup\">\n{$this->_items}</div>\n";
 		if($this->_title)
 		{
 			$popup .= "<a href=\"javascript:;\" id=\"{$this->_id}\" class=\"popup_button\">{$this->_title}</a>\n";
 		}
 		$popup .= "<script type=\"text/javascript\">\n";
 		$popup .= "new PopupMenu('{$this->_id}');\n";
-		$popup .= "</script>\n";
+		$popup .= "</script></div>\n";
 		return $popup;
 	}
 
