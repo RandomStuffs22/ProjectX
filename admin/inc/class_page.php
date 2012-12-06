@@ -880,7 +880,7 @@ class DefaultPopupMenu
 		{
 			$onclick = " onclick=\"{$onclick}\"";
 		}
-		$this->_items .= "<div class=\"popup_item_container\"><a title=\"{$text}\" href=\"{$link}\"{$onclick} class=\"popup_item\"></a></div>";
+		$this->_items .= "<div class=\"popup_item_container\"><a href=\"{$link}\"{$onclick} class=\"popup_item\">{$text}</a></div>";
 	}
 
 	/**
