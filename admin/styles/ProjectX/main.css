@@ -418,13 +418,13 @@ table.general tr:first-child td,th
 	border-top: 1px solid #d2d3d4
 }
 
-form[action*="module=user-users&action=edit"] .tab_overview table.general tr:first-child td:first-child
+form[action*="module=user-users&action=edit"] #tab_overview table.general tr:first-child td:first-child
 {
 	border-radius: 0 0 0 5px;
 	border-right-style:solid;
 }
 
-form[action*="module=user-users&action=edit"] .tab_overview table.general tr:not(:first-child) td:first-child
+form[action*="module=user-users&action=edit"] #tab_overview table.general tr:not(:first-child) td:first-child
 {
 	border-left:none;
 	border-radius:0;
