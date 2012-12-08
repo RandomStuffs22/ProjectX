@@ -418,6 +418,18 @@ table.general tr:first-child td,th
 	border-top: 1px solid #d2d3d4
 }
 
+form[action*="module=user-users&action=edit"] table.general tr:first-child td:first-child
+{
+	border-radius: 0 0 0 5px;
+	border-right-style:solid;
+}
+
+form[action*="module=user-users&action=edit"] table.general tr:not(:first-child) td:first-child
+{
+	border-left:none;
+	border-radius:0;
+}
+
 table.general th
 {
 	text-align: center;
@@ -557,7 +569,7 @@ table.form_container tr:first-child td
 	-webkit-box-shadow: inset 0 1px 2px white, 0 0 30px -8px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: inset 0 1px 2px white, 0 0 30px -8px rgba(0, 0, 0, 0.3);
 	text-shadow: 0 1px white;
-    white-space: nowrap;
+	white-space:nowrap;
 	font-weight:400;
 }
 
