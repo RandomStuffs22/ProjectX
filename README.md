@@ -1,14 +1,12 @@
 ProjectX: it's simply the theme
 ===============================
 
-**IMPORTANT**: *Thanks to this GitHub Repo you can track bugfixes and keep your ProjectX copy up to date, but keep in mind that this is a <strong>development version</strong>. Therefore, CSSs and JSs <strong>are not</strong> packed, although you can pack them on your own: I'll update this dev version with bugfixes and icon additions every time you will request any. Also, this ProjectX version <strong>doesn't include the installation wizard</strong> but it contains just the necessary files to make it work properly. If you haven't installed it on your board yet, please download it from the [Mods Site][1] and install it through the installation wizard first.*
+**IMPORTANT**: *Thanks to this GitHub Repo you can track bugfixes and keep your ProjectX copy up to date, but keep in mind that this is a <strong>development version</strong>. Therefore, CSSs and JSs <strong>are not</strong> packed, although you can pack them on your own: I'll update this dev version with bugfixes and icon additions every time you will request any.
 
-[1]: http://mods.mybb.com/
-
-> **Current version** beta 0.1-4  
-> **Dependencies** jQuery (included in /jscripts folder)  
+> **Current version** beta 0.1.5  
+> **Dependencies** jQuery (automatically loaded)  
 > **Author** Shade  
-> **Special thanks goes to...** Lowseling who created and currently maintains the installation wizard, WebOutfit who reported me a lot of bugs and helped me fixing some of them. They both have access to upcoming releases before anyone else.
+> **Special thanks goes to...** WebOutfit who reported me a lot of bugs and helped me fixing some of them.
 
 General
 -------
@@ -26,7 +24,7 @@ Main features
 
 At the moment ProjectX is equipped with:
 
-* A lightweight and clean installation wizard which will guide you through ProjectX installation **Not included in GitHub version**
+* A plugin-based structure with a one-click automatic installation, now compatible with any server!
 * Stunning and comprehensible graphics
 * A new, stunning concept of popups, Mac inspired and with amazing styles and animations
 * Clean and intuitive User Interface
