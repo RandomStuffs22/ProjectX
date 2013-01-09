@@ -1,9 +1,9 @@
 ProjectX: it's simply the theme
 ===============================
 
-**IMPORTANT**: *Thanks to this GitHub Repo you can track bugfixes and keep your ProjectX copy up to date, but keep in mind that this is a <strong>development version</strong>. Therefore, CSSs and JSs <strong>are not</strong> packed, although you can pack them on your own: I'll update this dev version with bugfixes and icon additions every time you will request any.
+**IMPORTANT**: *Thanks to this GitHub Repo you can track bugfixes and keep your ProjectX copy up to date, but keep in mind that this is a <strong>development version</strong>. Therefore, CSSs and JSs <strong>are not</strong> packed, although you can pack them on your own: I'll update this dev version with bugfixes and icon additions every time you will request any.*
 
-> **Current version** beta 0.1.5  
+> **Current version** beta 0.1.6  
 > **Dependencies** jQuery (automatically loaded)  
 > **Author** Shade  
 > **Special thanks goes to...** WebOutfit who reported me a lot of bugs and helped me fixing some of them.
@@ -13,7 +13,7 @@ General
 
 ProjectX is a MyBB Admin Control Panel theme, which as many people say is the best theme ever made for a MyBB installation. It's clean and revolutionary UI and it's lightweight one-click installation wizard are the main reasons why you should at least try it on your board.
 
-[Here][2] you can enjoy some previews and you can download the actual beta of the full theme + installation wizard.
+[Here][2] you can enjoy some previews and you can download the actual beta of the full theme.
 
 [2]: http://community.mybb.com/thread-129591.html
 
@@ -33,6 +33,7 @@ At the moment ProjectX is equipped with:
 * Great combinations of solid and dashed borders with border-radius support for almost every page in ACP
 * Full page navigation for a better board management
 * Template full page editing for a better handling and writing
+* Autogrowing textareas with a fluid animation and ease **NEW**
 * Support for every browser except for IE =< 8 (untested as for now)
 
 Looking forward to the upcoming release
