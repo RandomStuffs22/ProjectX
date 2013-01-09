@@ -28,7 +28,7 @@ function projectx_info()
         'authorsite' => 'http://idevicelab.net',
         'version' => 'beta 0.1.5',
         'compatibility' => '16*',
-        'guid' => 'none... yet!'
+        'guid' => '75de0ff376b2772bb900874f41ce176d'
     );
 }
 
