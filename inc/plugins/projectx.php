@@ -84,9 +84,9 @@ function projectx_uninstall()
     $PL or require_once PLUGINLIBRARY;
     
     
-    // delete the cache
-    $shade_plugins             = $cache->read('shade_plugins');
-    $shade_plugins['ProjectX'] = array();
+    // delete the plugin from cache
+    $shade_plugins = $cache->read('shade_plugins');
+    unset($shade_plugins['ProjectX']);
     $cache->update('shade_plugins', $shade_plugins);
 }
 
