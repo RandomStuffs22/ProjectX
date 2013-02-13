@@ -948,12 +948,8 @@ label.button_no:before {
 }
 #flash_message.success:before,div.success p em:before {
 	font-family:FontAwesome;
-	content:"\f058";
-	font-size:16px;
-	left:10px;
-	top:11px;
-	position:absolute;
-	line-height:1
+	content:"\f00c";
+	margin-right:10px;
 }
 .alert {
 	margin:10px 0;
@@ -1004,30 +1000,31 @@ div.error ul,div.success ul {
 	margin-top:0;
 	font-weight:400
 }
+.success {
+	background-image:-webkit-linear-gradient(top,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.07) 100%);
+	padding:5px;
+	border-radius:4px;
+	width:100%;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
 div.success p {
 	position:relative;
 	text-shadow:white 0 1px 0;
-	border-radius:5px;
-	margin-bottom:15px;
-	background:#5AAE54;
-	background-image:-webkit-linear-gradient(top,#68C961 0%,#5AAE54 100%);
-	background-image:-moz-linear-gradient(top,#68C961 0,#5AAE54 100%);
-	background-image:-o-linear-gradient(top,#68C961 0,#5AAE54 100%);
-	background-image:linear-gradient(to bottom,#68C961 0,#5AAE54 100%);
-	border:1px solid #67B146;
-	box-shadow:inset 0 -1px 1px #71da69;
-	-webkit-box-shadow:inset 0 -1px 1px #71da69;
-	-moz-box-shadow:inset 0 -1px 1px #71da69;
-	border-bottom:1px solid #5C9F3F;
+	border-radius:4px;
+	background-image:-webkit-linear-gradient(top,#fff 0%,#fff 85%,#f1f2f3 100%);
+	border:1px solid #c1c2c3;
 	line-height:20px;
-	font-size:13px;
-	color:#294F21;
-	text-shadow:0 1px #B0EEAA
+	font-size:15px;
+	color:rgba(0,0,0,0.4);
+	text-shadow:0px 1px 2px #fff,0 0 0 #000;
+	box-shadow:0 1px 3px -1px rgba(0,0,0,0.2);
 }
 div.error p,div.success p {
 	margin:0;
-	font-weight:normal;
-	padding:10px
+	font-weight:500;
+	padding:20px;
 }
 div.error p em,div.success p em {
 	font-style:normal;
