@@ -31,7 +31,7 @@ a:hover {
 	display:none
 }
 #container {
-	padding:0 100px;
+	padding:30px 100px;
 	background:#FAFAFA;
 	background-image:-moz-linear-gradient(top,#f5f5f5 0,#FAFAFA 100%);
 	background-image:-o-linear-gradient(top,#f5f5f5 0,#FAFAFA 100%);
@@ -147,9 +147,6 @@ html>body #menu ul {
 #left_menu div.left_menu_box ul.menu li:last-child a {
 	padding:10px 0 5px 15px
 }
-* html #left_menu li a,,* html #left_menu li {
-	height:1%
-}
 .border_wrapper {
 	margin:20px 0;
 	padding:0;
@@ -230,6 +227,12 @@ table.general>tbody>tr:last-child td:only-child {
 }
 form[action*="edit_stylesheet"] table.general tr:first-child td:first-child {
 	border-right:1px solid #d2d3d4
+}
+form[action*="edit_template"] table.general tr:last-child td .row {
+	margin:0;
+	border:none;
+	width: auto;
+	padding: 0;
 }
 form[action*="action=backup"] table.general tr:not(:first-child) td:first-child {
 	border-top:1px solid #d2d3d4;
@@ -442,8 +445,8 @@ table.form_container tr:first-child td {
 }
 .popup_menu .popup_item:hover {
 	text-decoration:none;
-	background:#8ca6c9;
-	border-color:#839cbd;
+	background:rgb(201,140,140);
+	border-color:rgb(189,131,131);
 	color:#f7f7f7;
 	text-shadow:0 1px rgba(0,0,0,0.2);
 	border-radius:3px;
@@ -564,17 +567,15 @@ form div.form_container,fieldset {
 fieldset {
 	border-radius:5px
 }
-.form_row {
-	margin:0;
+.row {
+	margin:-10px 0;
 	width:75%;
 	margin-left:25%;
 	border-left:1px dashed #D2D3D4;
-	margin-top:-10px;
 	padding:10px 0 10px 20px;
 	box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
-	margin-bottom:-10px
 }
 .form_row:empty {
 	padding:0
@@ -595,7 +596,6 @@ legend {
 	font-weight:500;
 	color:#888;
 	float:left;
-	width:23%
 }
 .group_settings_bit label {
 	color:#888;
@@ -631,13 +631,9 @@ small {
 .form_container .description {
 	font-size:11px;
 	color:#888;
-	width:75%;
-	margin-left:25%;
-	border-left:1px dashed #d2d3d4;
-	margin-bottom:-10px;
-	padding:10px 0 10px 20px;
 	font-weight:400;
-	margin-top:-10px
+	padding-top:10px;
+	clear: both;
 }
 input.text_input,input[type*="text"] {
 	border:1px solid #ddd;
@@ -708,7 +704,6 @@ select {
 	border-bottom:1px solid #C0C1C2;
 	text-shadow:0 1px white;
 	margin:0;
-	margin-bottom:5px;
 	vertical-align:top
 }
 input.inline_submit {
@@ -948,8 +943,12 @@ label.button_no:before {
 }
 #flash_message.success:before,div.success p em:before {
 	font-family:FontAwesome;
-	content:"\f00c";
-	margin-right:10px;
+	content:"\f058";
+	font-size:16px;
+	left:10px;
+	top:11px;
+	position:absolute;
+	line-height:1
 }
 .alert {
 	margin:10px 0;
@@ -1000,31 +999,30 @@ div.error ul,div.success ul {
 	margin-top:0;
 	font-weight:400
 }
-.success {
-	background-image:-webkit-linear-gradient(top,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.07) 100%);
-	padding:5px;
-	border-radius:4px;
-	width:100%;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-}
 div.success p {
 	position:relative;
 	text-shadow:white 0 1px 0;
-	border-radius:4px;
-	background-image:-webkit-linear-gradient(top,#fff 0%,#fff 85%,#f1f2f3 100%);
-	border:1px solid #c1c2c3;
+	border-radius:5px;
+	margin-bottom:15px;
+	background:#5AAE54;
+	background-image:-webkit-linear-gradient(top,#68C961 0%,#5AAE54 100%);
+	background-image:-moz-linear-gradient(top,#68C961 0,#5AAE54 100%);
+	background-image:-o-linear-gradient(top,#68C961 0,#5AAE54 100%);
+	background-image:linear-gradient(to bottom,#68C961 0,#5AAE54 100%);
+	border:1px solid #67B146;
+	box-shadow:inset 0 -1px 1px #71da69;
+	-webkit-box-shadow:inset 0 -1px 1px #71da69;
+	-moz-box-shadow:inset 0 -1px 1px #71da69;
+	border-bottom:1px solid #5C9F3F;
 	line-height:20px;
-	font-size:15px;
-	color:rgba(0,0,0,0.4);
-	text-shadow:0px 1px 2px #fff,0 0 0 #000;
-	box-shadow:0 1px 3px -1px rgba(0,0,0,0.2);
+	font-size:13px;
+	color:#294F21;
+	text-shadow:0 1px #B0EEAA
 }
 div.error p,div.success p {
 	margin:0;
-	font-weight:500;
-	padding:20px;
+	font-weight:normal;
+	padding:10px
 }
 div.error p em,div.success p em {
 	font-style:normal;
@@ -1097,11 +1095,12 @@ option {
 ul#tabs,ul#tabs2 {
 	display:inline-block;
 	margin:0;
-	padding:0
+	padding:0;
+	margin-left:-1px;
 }
 #left_menu {
 	list-style:none;
-	padding:0 100px
+	padding:0;
 }
 #tabs-wrapper {
 	list-style:none;
@@ -1109,16 +1108,26 @@ ul#tabs,ul#tabs2 {
 	border:1px solid #dcddde;
 	box-shadow:inset 0 -1px 1px #fff;
 	border-bottom:1px solid #c0c1c2;
-	padding:0 100px;
-	border-right:none
+	padding:0;
+	border-radius:4px;
 }
-#left_menu li,#tabs-wrapper li {
+#left_menu li {
 	float:left;
 	margin:0;
 	padding:0;
 	list-style:none;
 	padding:0;
-	position:relative
+	position:relative;
+	width:72px;
+	height:55px;
+}
+#tabs-wrapper li {
+	float:left;
+	margin:0;
+	padding:0;
+	list-style:none;
+	padding:0;
+	position:relative;
 }
 #left_menu li a span {
 	display:inline-block;
@@ -1141,11 +1150,11 @@ ul#tabs,ul#tabs2 {
 	text-decoration:none;
 	color:#666;
 	display:block;
-	padding:15px 20px;
+	padding:0;
 	font-family:Open Sans;
-	min-height:33px;
-	min-width:30px;
-	text-align:center
+	text-align:center;
+	height:100%;
+	line-height:54px;
 }
 #tabs-wrapper a {
 	text-decoration:none;
@@ -1155,18 +1164,6 @@ ul#tabs,ul#tabs2 {
 	font-family:Open Sans;
 	min-width:30px;
 	text-align:center
-}
-#tabs-wrapper li:hover a {
-	margin-top:-1px;
-	border-top:1px solid #c7c8c9;
-	border-left:1px solid #c0c1c2;
-	border-right:1px solid #c0c1c2;
-	box-shadow:0 1px 2px rgba(0,0,0,0.08) inset;
-	color:#000;
-	padding:15px 19px
-}
-#tabs-wrapper li:active a {
-	background:#F5F6F7
 }
 #left_menu li.active a,#tabs-wrapper li.active a {
 	margin-top:-1px;
@@ -1182,22 +1179,12 @@ ul#tabs,ul#tabs2 {
 	box-shadow:0 1px 2px rgba(0,0,0,0.05) inset;
 	-webkit-box-shadow:0 1px 2px rgba(0,0,0,0.05) inset;
 	-moz-box-shadow:0 1px 2px rgba(0,0,0,0.05) inset;
-	padding:15px 19px
 }
-#tabs-wrapper li.active.first a {
-	padding:15px 19px
+#tabs-wrapper li.active a {
+	padding:15px 19px;
 }
-#tabs-wrapper li.active.last a {
-	padding:15px 20px 15px 19px
-}
-#tabs-wrapper li.active+li a:hover {
-	margin-left:-1px;
-	padding-left:20px
-}
-#tabs-wrapper li:hover+li.active a {
-	margin-left:-1px;
-	padding-left:20px;
-	border-left:1px solid #c0c1c2
+#tabs-wrapper li:first-child.active a {
+	border-radius:4px 0 0 4px;
 }
 .editor {
 	background:#f1f1f1;
@@ -1403,7 +1390,7 @@ input.search_button:hover {
 	display:inline-block
 }
 #left_menu,#tabs-wrapper {
-	margin:0 -100px 10px
+	margin:0
 }
 .ModalContent #tabs-wrapper {
 	margin:0 -14px 10px;
@@ -1546,17 +1533,17 @@ form div.error,form div.success,form .nav_tabs {
 	margin-right:0
 }
 #menusup {
-	margin:0 -100px;
-	padding:15px 100px;
+	padding:20px;
 	text-align:right;
-	background:#2f4d78;
+	background:rgb(184,59,59);
 	background-image:-moz-linear-gradient(top,rgba(152,179,217,.15),rgba(0,0,0,.15));
 	background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(152,179,217,.15)),to(rgba(0,0,0,.15)));
 	background-image:linear-gradient(top,rgba(152,179,217,.15),rgba(0,0,0,.15));
-	border-bottom:4px solid #dedede;
 	-moz-box-shadow:0 -1px 1px rgba(0,0,0,.1) inset;
 	-webkit-box-shadow:0 -1px 1px rgba(0,0,0,.1) inset;
-	box-shadow:0 -1px 1px rgba(0,0,0,.1) inset
+	box-shadow:0 -1px 1px rgba(0,0,0,.1) inset;
+	border-bottom:4px solid #dedede;
+	border-radius:4px 4px 0 0;
 }
 #menusup ul {
 	padding:0;
@@ -1566,13 +1553,13 @@ form div.error,form div.success,form .nav_tabs {
 #menusup ul li {
 	margin:0;
 	display:inline-block;
-	padding:0 10px
+	padding:0 8px
 }
 #menusup ul li:last-child {
-	padding:0
+	padding:0 0 0 8px;
 }
 #menusup a {
-	color:#9fb5d4;
+	color:rgb(212,159,159);
 	text-shadow:0 1px 1px rgba(0,0,0,.33);
 	font-weight:700;
 	font-size:14px
@@ -1587,10 +1574,9 @@ form div.error,form div.success,form .nav_tabs {
 #menu li a:before {
 	font-family:FontAwesome;
 	font-size:25pt;
-	line-height:1;
 	position:relative;
-	color:rgba(205,205,205,0.85);
-	text-shadow:0 2px 5px #fff,0 0 0 #000;
+	color:rgba(205,205,205,0.8);
+	text-shadow:0 1px 1px #fff,0 0 0 #000;
 	top:2px;
 	content:"\c404"
 }
@@ -1604,9 +1590,11 @@ form div.error,form div.success,form .nav_tabs {
 	right:50%;
 	margin-right:-6px
 }
+#menu li.active a:before {
+	color:rgba(197,56,56,0.8)!important;
+}
 #menu li:hover a:before {
-	color:rgba(105,105,105,0.75);
-	text-shadow:0 10px 10px #fff,0 0 0 #000
+	color:rgba(140,140,140,0.8);
 }
 #menu li a[href*="dashboard"]:before {
 	content:"\f015"
@@ -1619,7 +1607,6 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="credits"]:before,#menu li a[href*="tools-php_info"]:before {
 	content:"\f05a";
-	margin:0 -5px
 }
 #menu li a[href*="myshoutbox"]:before {
 	content:"\f0e6"
@@ -1632,11 +1619,9 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="config-plugins"]:before {
 	content:"\f0e8";
-	font-size:22pt
 }
 #menu li a[href*="module=network"]:before {
 	content:"\c014";
-	font-size:22pt
 }
 #menu li a[href*="backup"]:before {
 	content:"\f021"
@@ -1652,18 +1637,15 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="config-smilies"]:before {
 	content:"\c050";
-	font-size:22pt;
 }
 #menu li a[href*="config-badwords"]:before {
 	content:"\c003"
 }
 #menu li a[href*="config-mycode"]:before {
 	content:"\c004";
-	font-size:22pt
 }
 #menu li a[href*="config-languages"]:before {
 	content:"\c005";
-	font-size:22pt
 }
 #menu li a[href*="config-post_icons"]:before {
 	content:"\c009";
@@ -1673,46 +1655,36 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="config-attachment_types"]:before,#menu li a[href*="forum-attachments"]:before {
 	content:"\c008";
-	font-size:22pt
 }
 #menu li a[href*="config-mod_tools"]:before {
 	content:"\c006";
-	font-size:22pt
 }
 #menu li a[href*="config-spiders"]:before {
 	content:"\c010";
-	font-size:22pt
 }
 #menu li a[href*="config-calendars"]:before {
 	content:"\c011";
-	font-size:22pt
 }
 #menu li a[href*="config-warning"]:before {
 	content:"\c012";
-	font-size:22pt
 }
 #menu li a[href*="config-thread_prefixes"]:before {
 	content:"\c013"
 }
 #menu li a[href*="mysupport"]:before {
 	content:"\c007";
-	font-size:22pt
 }
 #menu li a[href*="pagemanager"]:before {
 	content:"\c016";
-	font-size:22pt
 }
 #menu li a[href*="config-threadfields"]:before {
 	content:"\c017";
-	font-size:22pt
 }
 #menu li a[href*="forum-management"]:before {
 	content:"\f0e6"
 }
 #menu li a[href*="forum-announcements"]:before {
 	content:"\c019";
-	font-size:22pt;
-	margin:0 -5px
 }
 #menu li a[href*="forum-moderation_queue"]:before {
 	content:"\c020"
@@ -1743,9 +1715,6 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="tools-cache"]:before {
 	content:"\c029";
-	font-size:22pt;
-	top:5px;
-	margin:0 5px
 }
 #menu li a[href*="tools-tasks"]:before {
 	content:"\c030"
@@ -1776,8 +1745,6 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="tools-modlog"]:before {
 	content:"\c006";
-	font-size:22pt;
-	margin:0 5px
 }
 #menu li a[href*="tools-maillogs"]:before {
 	content:"\c021"
@@ -1787,7 +1754,6 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a[href*="tools-warninglog"]:before {
 	content:"\c012";
-	margin:0 5px
 }
 #menu li a[href*="tools-statistics"]:before {
 	content:"\c045"
@@ -1796,21 +1762,22 @@ form div.error,form div.success,form .nav_tabs {
 	content:"\c044"
 }
 #left_menu #menu {
-	text-align:center;
 	list-style:none;
 	background:#FAFBFC;
 	border:1px solid #DCDDDE;
 	box-shadow:inset 0 -1px 1px white;
 	border-bottom:1px solid #C0C1C2;
-	padding:0 100px;
-	margin:0 -100px;
-	border-right:none
+	padding:0;
+	text-align:center;
 }
 #left_menu #menu {
 	margin-top:-1px
 }
 #left_menu #menu:first-child {
 	margin-top:0
+}
+#left_menu #menu:last-child {
+	border-radius:0 0 4px 4px;
 }
 .tooltip {
 	color:#fff;
@@ -1820,7 +1787,7 @@ form div.error,form div.success,form .nav_tabs {
 	padding:1px 10px;
 	border-radius:2px;
 	font-weight:700;
-	background:#2F4D78;
+	background:rgb(207,35,35);
 	background-image:-moz-linear-gradient(top,rgba(152,179,217,.15),rgba(0,0,0,.15));
 	background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(152,179,217,.15)),to(rgba(0,0,0,.15)));
 	background-image:linear-gradient(top,rgba(152,179,217,.15),rgba(0,0,0,.15));
@@ -1829,8 +1796,8 @@ form div.error,form div.success,form .nav_tabs {
 	box-shadow:0 -1px 1px rgba(0,0,0,.1) inset,0 1px 1px rgba(255,255,255,.3) inset;
 	text-shadow:0 1px 1px rgba(0,0,0,.33);
 	z-index:9999;
-	border:1px solid #223857;
-	border-bottom-color:#1f334f;
+	border:1px solid rgb(121,29,29);
+	border-bottom-color:rgb(121,38,38);
 }
 .tooltip:after,.tooltip:before {
 	top:100%;
@@ -1843,7 +1810,7 @@ form div.error,form div.success,form .nav_tabs {
 }
 .tooltip:after {
 	border-color:rgba(36,60,94,0);
-	border-top-color:#243c5e;
+	border-top-color:rgb(168,36,36);
 	border-width:5px;
 	left:50%;
 	margin-top:-1px;
@@ -1851,7 +1818,7 @@ form div.error,form div.success,form .nav_tabs {
 }
 .tooltip:before {
 	border-color:rgba(31,51,79,0);
-	border-top-color:#0f1926;
+	border-top-color:rgb(38,15,15);
 	border-width:5px;
 	left:50%;
 	margin-left:-5px;
