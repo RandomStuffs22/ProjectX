@@ -108,7 +108,8 @@ var imagepath = '../images';
 			$message = $admin_session['data']['flash_message']['message'];
 			$type = $admin_session['data']['flash_message']['type'];
 			echo "<div id=\"flash_message\" class=\"{$type}\">\n";
-			echo "{$message}\n";
+			echo "<p class=\"icon\"><span></span></p>";
+			echo "<div class=\"content\">{$message}</div>\n";
 			echo "</div>\n";
 			update_admin_session('flash_message', '');
 		}
@@ -147,6 +148,22 @@ var imagepath = '../images';
 			exit;
 		}
 	}
+	
+	function output_error($error)
+	{
+		echo "<div class=\"error\">\n";
+		echo "<p class=\"icon\"><span></span></p>";
+		echo "<div class=\"content\">{$error}</div>\n";
+		echo "</div>\n";
+	}
+	
+	function output_success($message)
+	{
+		echo "<div class=\"success\">\n";
+		echo "<p class=\"icon\"><span></span></p>";
+		echo "<div class=\"content\">{$message}</div>\n";
+		echo "</div>\n";
+    }
 	
 	function _generate_breadcrumb()
 	{

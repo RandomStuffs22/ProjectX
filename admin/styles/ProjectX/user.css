@@ -26,7 +26,7 @@
 }
 
 .group_settings_bit input {
-	margin-right: 8px;
+	margin: 0 5px 0 0;
 }
 
 .group_settings_bit select,

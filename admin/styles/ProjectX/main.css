@@ -150,7 +150,8 @@ html>body #menu ul {
 .border_wrapper {
 	margin:20px 0;
 	padding:0;
-	width:100%
+	width:100%;
+	clear: both;
 }
 .border_wrapper div.title {
 	color:#444;
@@ -192,21 +193,36 @@ table.general tr:last-child td:only-child {
 table.general tr:only-child td:only-child,.form_row dl dd.endtimes table tr:only-child td:only-child,dd table tr:only-child td:only-child {
 	border-radius:5px
 }
-.form_row dl dd.endtimes table,.form_row dl dd.endtimes table tr:only-child td:only-child,.form_row dl dd.endtimes {
+/* dd patch */
+.form_row dl dd.endtimes table,.form_row dl dd.endtimes table tr:only-child td:only-child,.form_row dl dd.endtimes, dd {
 	width:100%;
 	margin:0
 }
-.form_row dl dd.endtimes table tr:only-child td:only-child {
+dd {
+    border: 1px dashed #d2d3d4;
+}
+dd td {
+    border: none!important;
+}
+.form_row dl dd.endtimes table tr:only-child td:only-child, dd {
 	border-style:dashed;
 	border-left:none;
 	border-right:none;
 	border-radius:0
 }
-.form_row dl dd.endtimes {
+.form_row dl dd.endtimes, dd {
 	margin:5px -20px!important;
 	display:block;
 	width:auto
 }
+dd table {
+    width:100%;
+}
+dd td:first-child {
+    width: 20%;
+    border-right: 1px dashed #d2d3d4!important;
+}
+/* end dd patch */
 .title+table.general tr:only-child td:only-child,form[action*="edit_stylesheet&mode=advanced"] table.general tbody tr:last-child td:only-child {
 	border-radius:0 0 5px 5px
 }
@@ -318,8 +334,7 @@ table.form_container tr:first-child td {
 }
 #footer {
 	clear:both;
-	background:url(data:image/png;
-	base64,iVBORw0KGgoAAAANSUhEUgAAA8AAAAACCAYAAACXHrW5AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMS8yMS8xMRTK2QYAAAAedEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzUuMasfSOsAAACJSURBVFiF7dDRDQIhEIThwagl0APQ13VlWWoPlKC5W580xsCSoL79XzIvO0CAYGY6X64HSa0cO3Ovm9nz9Xm11pMAAAAAAD8VY1wk3Z3cJrqZPTPnveYlp3UvSSWn3lvN+Qd7S2/+2be6UbZBt0myktPi3BUAAAAA8B9h0IXGmtCI142yc+bPrA9SsV5iEaGw/wAAAABJRU5ErkJggg==) 50% 0 no-repeat;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8AAAAACCAYAAACXHrW5AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMS8yMS8xMRTK2QYAAAAedEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzUuMasfSOsAAACJSURBVFiF7dDRDQIhEIThwagl0APQ13VlWWoPlKC5W580xsCSoL79XzIvO0CAYGY6X64HSa0cO3Ovm9nz9Xm11pMAAAAAAD8VY1wk3Z3cJrqZPTPnveYlp3UvSSWn3lvN+Qd7S2/+2be6UbZBt0myktPi3BUAAAAA8B9h0IXGmtCI142yc+bPrA9SsV5iEaGw/wAAAABJRU5ErkJggg==) 50% 0 no-repeat;
 	background-size:100% 2px;
 	padding-top:10px;
 	color:#aaa;
@@ -462,26 +477,26 @@ table.form_container tr:first-child td {
 	margin-right:5px
 }
 .popup_menu a[href*="forum-management&fid="]:before {
-	content:"\c055";
+	content: "\f026";
 }
 .popup_menu a[href*="action=edit"]:before {
-	content:"\c053";
+	content: "\f007";
 	font-size:11px
 }
 .popup_menu a[href*="tab_moderators"]:before {
-	content:"\c022";
+	content: "\f021";
 }
 .popup_menu a[href*="tab_permissions"]:before {
-	content:"\c024";
+	content: "\f032";
 }
 .popup_menu a[href*="action=add"]:before {
-	content:"\f067";
+	content: "\f005";
 }
 .popup_menu a[href*="user-banning"]:before {
 	content:"\c001";
 }
 .popup_menu a[href*="action=delete"]:before {
-	content:"\f057";
+	content: "\a002";
 }
 .popup_menu a[href*="action=referrers"]:before {
 	content:"\c010";
@@ -595,7 +610,8 @@ legend {
 .form_container label {
 	font-weight:500;
 	color:#888;
-	float:left;
+	float: left;
+	width: 23%;
 }
 .group_settings_bit label {
 	color:#888;
@@ -627,13 +643,14 @@ small label {
 }
 small {
 	font-size:11px
+;
+	color: #888;
 }
 .form_container .description {
 	font-size:11px;
 	color:#888;
 	font-weight:400;
 	padding-top:10px;
-	clear: both;
 }
 input.text_input,input[type*="text"] {
 	border:1px solid #ddd;
@@ -824,17 +841,23 @@ label.button_yes {
 	border:1px solid #D2D3D4;
 	box-shadow:0 0 10px #fff;
 	font-size:12px;
-	padding:6px 8px 6px 8px
+	padding: 0;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
 }
 label.button_no {
-	padding:4px 6px;
-	min-width:30px;
 	border-radius:50px;
 	cursor:pointer;
 	background:whitesmoke;
 	border:1px solid #D2D3D4;
 	font-size:12px;
-	padding:6px 9px
+	padding: 0;
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	line-height: 25px;
 }
 label.button_yes:hover,label.button_no:hover {
 	background:#ededed
@@ -850,24 +873,29 @@ label:before {
 	font-family:FontAwesome
 }
 label.button_yes:before {
-	content:"\f00c"
-}
+	content: "\a001";}
 label.button_no:before {
-	content:"\f00d"
-}
+	content: "\a002";}
 .radio_input+label {
 	margin-right:8px;
 	display:block;
-	width:auto!important;
 	float:left;
 	border-radius:2px;
-	padding:6px 8px;
+	padding: 0;
 	line-height:1;
 	background:#f2f6f9;
 	border:1px solid #d0d8db;
 	color:#bdcad2;
 	font-weight:500;
-	cursor:pointer
+	cursor:pointer;
+	text-align: center;
+	padding:6px 8px
+}
+.radio_input[value*="1"]+label,.radio_input[value*="0"]+label {
+	height: 24px;
+	width: 30px;
+	line-height: 25px;
+	padding:0;
 }
 .radio_input+label+br {
 	display:none
@@ -877,8 +905,7 @@ label.button_no:before {
 	float:none
 }
 .radio_input[value*="0"][class*="radio_no"]+label,.radio_input[value*="0"][class*="radio_off"]+label {
-	padding:6px 9px
-}
+	padding: 0;}
 .radio_input[value*="0"][class*="radio_no"]:checked+label,.radio_input[value*="0"][class*="radio_off"]:checked+label {
 	background:#ef8585;
 	border:1px solid #d26463;
@@ -899,56 +926,12 @@ label.button_no:before {
 }
 .radio_input[value*="0"][class*="radio_no"]+label:before,.radio_input[value*="0"][class*="radio_off"]+label:before {
 	font-family:FontAwesome;
-	content:"\f00d";
-	font-size:13px
+	content: "\a002";
+	font-size: 13px
 }
 .radio_input[value*="1"][class*="radio_yes"]+label:before,.radio_input[value*="1"][class*="radio_on"]+label:before {
-	font-family:FontAwesome;
-	content:"\f00c";
-	font-size:13px
-}
-#flash_message {
-	padding:10px 0 10px 29px;
-	border-radius:5px
-}
-#flash_message.error:before {
-	font-family:FontAwesome;
-	content:"\f06a";
-	font-size:16px;
-	left:10px;
-	top:11px;
-	position:absolute
-}
-#flash_message.success {
-	position:relative;
-	overflow:hidden;
-	text-shadow:white 0 1px 0;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-	background:#5AAE54;
-	background-image:-webkit-linear-gradient(top,#68C961 0%,#5AAE54 100%);
-	background-image:-moz-linear-gradient(top,#68C961 0,#5AAE54 100%);
-	background-image:-o-linear-gradient(top,#68C961 0,#5AAE54 100%);
-	background-image:linear-gradient(to bottom,#68C961 0,#5AAE54 100%);
-	border:1px solid #67b146;
-	box-shadow:inset 0 -1px 1px #71da69;
-	-webkit-box-shadow:inset 0 -1px 1px #71da69;
-	-moz-box-shadow:inset 0 -1px 1px #71da69;
-	border-bottom:1px solid #5c9f3f;
-	line-height:20px;
-	font-size:13px;
-	color:#294f21;
-	text-shadow:0 1px #B0EEAA
-}
-#flash_message.success:before,div.success p em:before {
-	font-family:FontAwesome;
-	content:"\f058";
-	font-size:16px;
-	left:10px;
-	top:11px;
-	position:absolute;
-	line-height:1
+	content: "\a001";
+	font-size: 13px
 }
 .alert {
 	margin:10px 0;
@@ -963,70 +946,86 @@ label.button_no:before {
 	padding-left:24px;
 	display:block
 }
-div.error {
+div.error, div.success {
 	position:relative;
 	text-shadow:white 0 1px 0;
-	border-radius:5px;
-	margin-bottom:15px;
-	background:#AD5353;
-	background-image:-webkit-linear-gradient(top,#C96161 0%,#AD5353 100%);
-	background-image:-moz-linear-gradient(top,#C96161 0,#AD5353 100%);
-	background-image:-o-linear-gradient(top,#C96161 0,#AD5353 100%);
-	background-image:linear-gradient(to bottom,#C96161 0,#AD5353 100%);
-	border:1px solid #b04646;
-	box-shadow:inset 0 -1px 1px #d96868;
-	-webkit-box-shadow:inset 0 -1px 1px #d96868;
-	-moz-box-shadow:inset 0 -1px 1px #d96868;
-	border-bottom:1px solid #9e3f3f;
-	line-height:20px;
-	font-size:13px;
-	color:#4f2121;
-	text-shadow:0 1px #eda8a8;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box
+	border-radius:3px;
+    background: #FAFBFC;
+    border: 1px solid #DCDDDE;
+    box-shadow: inset 0 -1px 1px white;
+    border-bottom: 1px solid #C0C1C2;
+	background:-webkit-linear-gradient(top,#FAFBFC 0%,#FAFBFC 85%,#f6f5f4 100%);
+	background:-moz-linear-gradient(top,#FAFBFC 0%,#FAFBFC 85%,#f6f5f4 100%);
+	background:-o-linear-gradient(top,#FAFBFC 0%,#FAFBFC 85%,#f6f5f4 100%);
+	font-size: 15px;
+	color:#999;
+	text-shadow:0px -1px #fff;
+	margin:0;
+	padding: 10px 15px;
+	font-weight:400;
 }
-div.error p em:before {
+div.error .icon, div.success .icon {
+	width: 25px;
+	height: 25px;
+	margin-right:15px;
+	border-radius:50px;
+	padding:6px;
+	background: -webkit-linear-gradient(top,#f1f2f3 0%,#eee 100%);
+	background:-moz-linear-gradient(top,#f1f2f3 0%,#eee 100%);
+	background:-o-linear-gradient(top,#f1f2f3 0%,#eee 100%);
+	text-align:center;
+	float:left;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1), 0 1px #fff;
+}
+div.error .icon span, div.success .icon span {
+	width: 25px;
+	height: 25px;
+	display:inline-block;
+	border-radius:50px;
+}
+div.error .icon span:before, div.success .icon span:before {
 	font-family:FontAwesome;
-	content:"\f057";
-	font-size:16px;
-	left:10px;
-	top:11px;
-	position:absolute;
-	line-height:1
+	font-size: 13px;
+	line-height: 25px;
+	color: white;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+div.error .content, div.success .content {
+	display: table-cell;
+	vertical-align: middle;
+	height: 37px;
+}
+.content p {
+	margin:0
+}
+.success .icon span:before {
+	content:"\a001";
+}
+.success .icon span {
+	background:-webkit-linear-gradient(top,rgb(126,177,107) 0%,rgb(126,177,107) 20%,#59844a 100%);
+	background:-moz-linear-gradient(top,rgb(126,177,107) 0%,rgb(126,177,107) 20%,#59844a 100%);
+	background:-o-linear-gradient(top,rgb(126,177,107) 0%,rgb(126,177,107) 20%,#59844a 100%);
+}
+.error .icon span:before {
+	content: "\a002";
+	font-size:20px;
+}
+.error .icon span {
+	background:-webkit-linear-gradient(top,#bf5455 0%,#bf5455 20%,#9b393a 100%);
+	background:-moz-linear-gradient(top,#bf5455 0%,#bf5455 20%,#9b393a 100%);
+	background:-o-linear-gradient(top,#bf5455 0%,#bf5455 20%,#9b393a 100%);
 }
 div.error ul,div.success ul {
 	margin-top:0;
 	font-weight:400
 }
-div.success p {
-	position:relative;
-	text-shadow:white 0 1px 0;
-	border-radius:5px;
-	margin-bottom:15px;
-	background:#5AAE54;
-	background-image:-webkit-linear-gradient(top,#68C961 0%,#5AAE54 100%);
-	background-image:-moz-linear-gradient(top,#68C961 0,#5AAE54 100%);
-	background-image:-o-linear-gradient(top,#68C961 0,#5AAE54 100%);
-	background-image:linear-gradient(to bottom,#68C961 0,#5AAE54 100%);
-	border:1px solid #67B146;
-	box-shadow:inset 0 -1px 1px #71da69;
-	-webkit-box-shadow:inset 0 -1px 1px #71da69;
-	-moz-box-shadow:inset 0 -1px 1px #71da69;
-	border-bottom:1px solid #5C9F3F;
-	line-height:20px;
-	font-size:13px;
-	color:#294F21;
-	text-shadow:0 1px #B0EEAA
-}
-div.error p,div.success p {
+div.error > p,div.success > p {
 	margin:0;
 	font-weight:normal;
 	padding:10px
 }
 div.error p em,div.success p em {
 	font-style:normal;
-	padding-left:19px;
 	display:block
 }
 div.success ul,div.error.ul {
@@ -1229,6 +1228,7 @@ ul#tabs,ul#tabs2 {
 	margin-bottom:10px;
 	margin-top:10px;
 	float:right
+;
 }
 .pagination .pages {
 	font-weight:bold
@@ -1573,7 +1573,7 @@ form div.error,form div.success,form .nav_tabs {
 }
 #menu li a:before {
 	font-family:FontAwesome;
-	font-size:25pt;
+	font-size: 22pt;
 	position:relative;
 	color:rgba(205,205,205,0.8);
 	text-shadow:0 1px 1px #fff,0 0 0 #000;
@@ -1597,82 +1597,89 @@ form div.error,form div.success,form .nav_tabs {
 	color:rgba(140,140,140,0.8);
 }
 #menu li a[href*="dashboard"]:before {
-	content:"\f015"
+	content: "\f001";
+	font-size: 26pt;
 }
 #menu li a[href*="preferences"]:before {
-	content:"\f085"
-}
+	content: "\f002";}
 #menu li a[href*="check"]:before {
-	content:"\f00c"
-}
+	content: "\f003";}
 #menu li a[href*="credits"]:before,#menu li a[href*="tools-php_info"]:before {
-	content:"\f05a";
+	content: "\f004";
+	font-size: 26pt;
 }
 #menu li a[href*="myshoutbox"]:before {
 	content:"\f0e6"
 }
 #menu li a[href*="style-themes"]:before {
-	content:"\f06e"
+	content: "\f007";
+	font-size: 18pt;
 }
 #menu li a[href*="style-templates"]:before {
-	content:"\f0c9"
-}
+	content: "\f008";}
 #menu li a[href*="config-plugins"]:before {
-	content:"\f0e8";
+	content: "\f009";
+	font-size: 24pt;
 }
 #menu li a[href*="module=network"]:before {
 	content:"\c014";
 }
 #menu li a[href*="backup"]:before {
-	content:"\f021"
+	content: "\f010"
 }
 #menu li a[href*="config-settings"]:before {
-	content:"\f086"
-}
+	content: "\f011";}
 #menu li a[href*="config-ban"]:before,#menu li a[href*="user-banning"]:before {
-	content:"\c001"
-}
+	content: "\f012";}
 #menu li a[href*="config-profile_fields"]:before {
-	content:"\c002"
+	content: "\f013";
+	font-size: 18pt;
 }
 #menu li a[href*="config-smilies"]:before {
-	content:"\c050";
+	content: "\f014";
+	font-size: 20pt;
 }
 #menu li a[href*="config-badwords"]:before {
-	content:"\c003"
-}
+	content: "\f015";}
 #menu li a[href*="config-mycode"]:before {
-	content:"\c004";
+	content: "\f016";
+	font-size: 20pt;
 }
 #menu li a[href*="config-languages"]:before {
-	content:"\c005";
+	content: "\f017";
 }
 #menu li a[href*="config-post_icons"]:before {
-	content:"\c009";
+	content: "\f018";
+	font-size: 24pt;
 }
 #menu li a[href*="config-help_documents"]:before {
-	content:"\c015"
-}
+	content: "\f019";}
 #menu li a[href*="config-attachment_types"]:before,#menu li a[href*="forum-attachments"]:before {
-	content:"\c008";
+	content: "\f020";
+	font-size: 20pt;
 }
 #menu li a[href*="config-mod_tools"]:before {
-	content:"\c006";
+	content: "\f021";
 }
 #menu li a[href*="config-spiders"]:before {
-	content:"\c010";
+	content: "\f022";
 }
 #menu li a[href*="config-calendars"]:before {
-	content:"\c011";
+	content: "\f023";
+	font-size: 18pt;
 }
 #menu li a[href*="config-warning"]:before {
-	content:"\c012";
+	content: "\f024";
 }
 #menu li a[href*="config-thread_prefixes"]:before {
-	content:"\c013"
-}
+	content: "\f025";}
 #menu li a[href*="mysupport"]:before {
-	content:"\c007";
+	content: "\e001";
+}
+#menu li a[href*="idlchat"]:before {
+	content: "\e002";
+	font-size: 20pt;
+	line-height: 48px;
 }
 #menu li a[href*="pagemanager"]:before {
 	content:"\c016";
@@ -1681,53 +1688,48 @@ form div.error,form div.success,form .nav_tabs {
 	content:"\c017";
 }
 #menu li a[href*="forum-management"]:before {
-	content:"\f0e6"
-}
+	content: "\f026";}
 #menu li a[href*="forum-announcements"]:before {
-	content:"\c019";
+	content: "\f027";
 }
 #menu li a[href*="forum-moderation_queue"]:before {
-	content:"\c020"
-}
+	content: "\f028";}
 #menu li a[href*="user-users"]:before {
-	content:"\c021"
-}
+	content: "\f029";}
 #menu li a[href*="user-groups"]:before {
-	content:"\c022"
-}
+	content: "\f030";}
 #menu li a[href*="user-titles"]:before {
-	content:"\c023"
-}
+	content: "\f031";}
 #menu li a[href*="user-admin_permissions"]:before {
-	content:"\c024"
+	content: "\f032";
+	font-size: 20pt;
 }
 #menu li a[href*="user-mass_mail"]:before {
-	content:"\c025"
-}
+	content: "\f033";}
 #menu li a[href*="user-group_promotion"]:before {
-	content:"\c026"
+	content: "\f034";
+	font-size: 20pt;
 }
+#menu li a[href*="user-customalerts"]:before {
+	content: "\e005";}
 #menu li a[href*="style-jsnips"]:before {
 	content:"\c027"
 }
 #menu li a[href*="tools-system_health"]:before {
-	content:"\c028"
-}
+	content: "\f035";}
 #menu li a[href*="tools-cache"]:before {
-	content:"\c029";
+	content: "\f036";
 }
 #menu li a[href*="tools-tasks"]:before {
-	content:"\c030"
-}
+	content: "\f037";}
 #menu li a[href*="tools-recount_rebuild"]:before {
-	content:"\c031"
+	content: "\f038";
+	font-size: 18pt;
 }
 #menu li a[href*="tools-optimizedb"]:before {
-	content:"\c032"
-}
+	content: "\f039";}
 #menu li a[href*="tools-file_verification"]:before {
-	content:"\c033"
-}
+	content: "\f040";}
 #menu li a[href*="tools-undodelete"]:before {
 	content:"\c044"
 }
@@ -1735,32 +1737,29 @@ form div.error,form div.success,form .nav_tabs {
 	content:"\c046"
 }
 #menu li a[href*="management&action=add"]:before {
-	content:"\f067"
+	content: "\f005";
+	font-size: 24pt;
 }
 #menu li a[href*="users&action=search"]:before {
-	content:"\f002"
-}
+	content: "\f006";}
 #menu li a[href*="tools-adminlog"]:before {
-	content:"\c024"
+	content: "\f032";
+	font-size: 20pt;
 }
 #menu li a[href*="tools-modlog"]:before {
-	content:"\c006";
+	content: "\f021";
 }
 #menu li a[href*="tools-maillogs"]:before {
-	content:"\c021"
-}
+	content: "\f029";}
 #menu li a[href*="tools-mailerrors"]:before {
-	content:"\c025"
-}
+	content: "\f033";}
 #menu li a[href*="tools-warninglog"]:before {
-	content:"\c012";
+	content: "\f024";
 }
 #menu li a[href*="tools-statistics"]:before {
-	content:"\c045"
-}
+	content: "\f041";}
 #menu li a[href*="tools-adminlog"]:after,#menu li a[href*="tools-modlog"]:after,#menu li a[href*="tools-maillogs"]:after,#menu li a[href*="tools-mailerrors"]:after,#menu li a[href*="tools-warninglog"]:after {
-	content:"\c044"
-}
+	content: "\e007";}
 #left_menu #menu {
 	list-style:none;
 	background:#FAFBFC;
@@ -1833,5 +1832,6 @@ select option {
 	text-transform:capitalize
 }
 .pjxPopup-wrap {
-	position: relative
+	position: relative;
+	display: inline-block;
 }
