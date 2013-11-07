@@ -23,9 +23,9 @@ function projectx_info()
     return array(
         'name' => 'ProjectX theme',
         'description' => 'One, or even <b>the</b> best Admin Control Panel themes out there for MyBB installations.',
-        'website' => 'http://idevicelab.net',
+        'website' => '',
         'author' => 'Shade',
-        'authorsite' => 'http://idevicelab.net',
+        'authorsite' => '',
         'version' => 'beta 0.1.5',
         'compatibility' => '16*',
         'guid' => '75de0ff376b2772bb900874f41ce176d'
